@@ -4,6 +4,7 @@ import GlowBackground from './components/GlowBackground'
 import CursorSpotlight from './components/CursorSpotlight'
 import ScrollProgress from './components/ScrollProgress'
 import Navbar from './sections/Navbar'
+import Hero from './sections/Hero'
 
 function App() {
   useEffect(() => {
@@ -29,8 +30,8 @@ function App() {
       {/* Main Content Layout */}
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-24">
-          {/* Sections will be added step by step */}
+        <main className="flex-grow">
+          <Hero />
         </main>
       </div>
     </div>
