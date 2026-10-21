@@ -8,6 +8,7 @@ import Hero from './sections/Hero'
 import About from './sections/About'
 import Skills from './sections/Skills'
 import Experience from './sections/Experience'
+import Projects from './sections/Projects'
 
 function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
           <About />
           <Skills />
           <Experience />
+          <Projects />
         </main>
       </div>
     </div>
