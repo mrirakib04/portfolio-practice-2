@@ -6,6 +6,7 @@ import ScrollProgress from './components/ScrollProgress'
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
 import About from './sections/About'
+import Skills from './sections/Skills'
 
 function App() {
   useEffect(() => {
@@ -34,6 +35,7 @@ function App() {
         <main className="flex-grow">
           <Hero />
           <About />
+          <Skills />
         </main>
       </div>
     </div>
