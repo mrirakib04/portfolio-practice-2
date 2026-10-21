@@ -29,27 +29,32 @@ export const personalInfo = {
 }
 
 export const skillsData = [
+  // Row 1: js, ts, react, next, redux
   { name: 'JavaScript', category: 'Languages', level: 'Advanced', color: '#F7DF1E' },
   { name: 'TypeScript', category: 'Languages', level: 'Advanced', color: '#3178C6' },
-  { name: 'Liquid', category: 'Languages', level: 'Intermediate', color: '#008060' },
-  { name: 'HTML5', category: 'Languages', level: 'Expert', color: '#E34F26' },
-  { name: 'CSS3', category: 'Languages', level: 'Expert', color: '#1572B6' },
-
   { name: 'React', category: 'Frontend', level: 'Advanced', color: '#61DAFB' },
   { name: 'Next.js', category: 'Frontend', level: 'Intermediate', color: '#ffffff' },
-  { name: 'Tailwind CSS', category: 'Frontend', level: 'Expert', color: '#38BDF8' },
-  { name: 'Material UI (MUI)', category: 'Frontend', level: 'Advanced', color: '#007FFF' },
-  { name: 'Bootstrap', category: 'Frontend', level: 'Advanced', color: '#7952B3' },
-  
+  { name: 'Redux', category: 'State Management', level: 'Intermediate', color: '#764ABC' },
+
+  // Row 2: node, express, mongodb, mongoose, firebase
   { name: 'Node.js', category: 'Backend', level: 'Advanced', color: '#339933' },
   { name: 'Express.js', category: 'Backend', level: 'Advanced', color: '#828282' },
   { name: 'MongoDB', category: 'Database', level: 'Advanced', color: '#47A248' },
+  { name: 'Mongoose', category: 'Database', level: 'Advanced', color: '#880000' },
   { name: 'Firebase', category: 'Backend', level: 'Advanced', color: '#FFCA28' },
-  
-  { name: 'Redux', category: 'State Management', level: 'Intermediate', color: '#764ABC' },
-  { name: 'Zustand', category: 'State Management', level: 'Intermediate', color: '#ea580c' },
-  { name: 'Shopify', category: 'E-Commerce', level: 'Intermediate', color: '#7AB55C' },
+
+  // Row 3: shopify, liquid, html, css, figma
+  { name: 'Shopify', category: 'E-Commerce', level: 'Expert', color: '#7AB55C' },
+  { name: 'Liquid', category: 'Languages', level: 'Intermediate', color: '#008060' },
+  { name: 'HTML5', category: 'Languages', level: 'Expert', color: '#E34F26' },
+  { name: 'CSS3', category: 'Languages', level: 'Expert', color: '#1572B6' },
   { name: 'Figma', category: 'Design & Tools', level: 'Advanced', color: '#F24E1E' },
+
+  // Row 4: remaining skills
+  { name: 'Tailwind CSS', category: 'Frontend', level: 'Expert', color: '#38BDF8' },
+  { name: 'Material UI (MUI)', category: 'Frontend', level: 'Advanced', color: '#007FFF' },
+  { name: 'Bootstrap', category: 'Frontend', level: 'Advanced', color: '#7952B3' },
+  { name: 'Zustand', category: 'State Management', level: 'Intermediate', color: '#ea580c' },
 ]
 
 
