@@ -6,12 +6,14 @@ import {
   Sparkles,
   Copy,
   Check,
+  AlertCircle,
   MapPin,
   Clock,
   ArrowUpRight,
   MessageSquare,
   ShieldCheck,
 } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 import { GithubIcon, LinkedinIcon } from '../components/Icons'
 import { personalInfo } from '../data/portfolioData'
 
@@ -22,7 +24,8 @@ export default function Contact() {
     message: '',
   })
   const [copiedEmail, setCopiedEmail] = useState(false)
-  const [formStatus, setFormStatus] = useState(null) // 'sending', 'sent', null
+  const [formStatus, setFormStatus] = useState(null) // 'sending', 'sent', 'error', null
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(personalInfo.email)
@@ -30,16 +33,53 @@ export default function Contact() {
     setTimeout(() => setCopiedEmail(false), 2000)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setFormStatus('sending')
+    if (!formData.name || !formData.email || !formData.message) return
 
-    // Simulate reliable message dispatch
-    setTimeout(() => {
+    setFormStatus('sending')
+    setErrorMessage('')
+
+    const serviceId = import.meta.env.VITE_SERVICE_ID
+    const templateId = import.meta.env.VITE_TEMPLATE_ID
+    const publicKey = import.meta.env.VITE_PUBLIC_API_KEY
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('EmailJS configuration missing: Ensure VITE_SERVICE_ID, VITE_TEMPLATE_ID, and VITE_PUBLIC_API_KEY are configured.')
+      setFormStatus('error')
+      setErrorMessage('Email configuration missing. Please verify environment settings.')
+      setTimeout(() => {
+        setFormStatus(null)
+        setErrorMessage('')
+      }, 6000)
+      return
+    }
+
+    const templateParams = {
+      from_name: formData.name,
+      user_name: formData.name,
+      name: formData.name,
+      from_email: formData.email,
+      user_email: formData.email,
+      email: formData.email,
+      reply_to: formData.email,
+      message: formData.message,
+    }
+
+    try {
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
       setFormStatus('sent')
       setFormData({ name: '', email: '', message: '' })
       setTimeout(() => setFormStatus(null), 5000)
-    }, 1200)
+    } catch (error) {
+      console.error('EmailJS transmission error:', error)
+      setFormStatus('error')
+      setErrorMessage(error?.text || 'Message transmission failed. Please try again or email directly.')
+      setTimeout(() => {
+        setFormStatus(null)
+        setErrorMessage('')
+      }, 6000)
+    }
   }
 
   return (
@@ -233,6 +273,11 @@ export default function Contact() {
                     <span className="flex items-center gap-2 text-emerald-200">
                       <Check className="w-5 h-5 text-emerald-400" />
                       <span>Message Dispatched Successfully!</span>
+                    </span>
+                  ) : formStatus === 'error' ? (
+                    <span className="flex items-center gap-2 text-rose-200">
+                      <AlertCircle className="w-5 h-5 text-rose-400 shrink-0" />
+                      <span className="truncate">{errorMessage || 'Dispatch Failed. Please Retry.'}</span>
                     </span>
                   ) : (
                     <>
