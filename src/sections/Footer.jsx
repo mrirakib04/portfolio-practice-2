@@ -57,8 +57,7 @@ export default function Footer() {
               <a href="#contact" className="hover:text-indigo-400 transition-colors">Contact Hub</a>
               <a
                 href={personalInfo.cvUrl}
-                target="_blank"
-                rel="noreferrer"
+                download="Md Rakibul Islam Rakib_Resume.pdf"
                 className="hover:text-indigo-400 transition-colors font-semibold text-indigo-300"
               >
                 Download CV ↗

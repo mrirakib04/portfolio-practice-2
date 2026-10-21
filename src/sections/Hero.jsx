@@ -179,8 +179,7 @@ export default function Hero() {
 
               <a
                 href={personalInfo.cvUrl}
-                target="_blank"
-                rel="noreferrer"
+                download="Md Rakibul Islam Rakib_Resume.pdf"
                 className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-[#0b1226] hover:bg-[#111a38] text-slate-200 hover:text-white font-bold text-sm sm:text-base border border-slate-700 hover:border-indigo-500/60 transition-all hover:scale-105 active:scale-95 shadow-lg"
               >
                 <Download className="w-5 h-5 text-indigo-400" />

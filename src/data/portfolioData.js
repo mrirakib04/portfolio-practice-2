@@ -19,7 +19,7 @@ export const personalInfo = {
   email: 'mdrakibulislam11928@gmail.com',
   github: 'https://github.com/mrirakib04',
   linkedin: 'https://www.linkedin.com/in/webdev-rakib/',
-  cvUrl: 'https://mrirakib.netlify.app/Md%20Rakibul%20Islam%20Rakib_CV.pdf',
+  cvUrl: '/Md%20Rakibul%20Islam%20Rakib_Resume.pdf',
   photoWithoutBg: myPhotoWithoutBg,
   photoWithBg: myPhotoWithBg,
   bio: [
