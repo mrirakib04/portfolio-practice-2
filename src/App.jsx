@@ -5,6 +5,7 @@ import CursorSpotlight from './components/CursorSpotlight'
 import ScrollProgress from './components/ScrollProgress'
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
+import About from './sections/About'
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
         <Navbar />
         <main className="flex-grow">
           <Hero />
+          <About />
         </main>
       </div>
     </div>
