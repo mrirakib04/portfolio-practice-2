@@ -59,7 +59,7 @@ export const experiencesData = [
     company: 'Pixelora Studio',
     role: 'Jr. Frontend Developer (Shopify & Liquid)',
     employmentType: 'Full-Time',
-    period: 'April 2026 – Present',
+    period: 'April 2026 – September 2026',
     isCurrent: true,
     location: 'Rampura, Dhaka',
     badge: 'Current Position',
